@@ -10,6 +10,7 @@ import { LuAlignLeft } from "react-icons/lu";
 import UserIcon from "./UserIcon";
 import { links } from "@/lib/constants/navLinks";
 import Link from "next/link";
+import SignOutLink from "./SignOutLink";
 
 export default function DropdownMenuDemo() {
   return (
@@ -28,6 +29,10 @@ export default function DropdownMenuDemo() {
             </Link>
           </DropdownMenuItem>
         ))}
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <SignOutLink />
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
