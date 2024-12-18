@@ -1,15 +1,7 @@
 import { SubmitButton } from "@/components/custom/form/buttons/SubmitButton";
 import FormContainer from "@/components/custom/form/FormContainer";
 import FormInput from "@/components/custom/form/FormInput";
-
-const createProfileAction = async (prevState: any, formData: FormData) => {
-  "use server";
-  const firstName = formData.get("firstName") as string;
-
-  return {
-    message: `Profile for ${firstName} created successfully`,
-  };
-};
+import { createProfileAction } from "@/utils/actions";
 
 export default function CreateProfilePage() {
   return (
