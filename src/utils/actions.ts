@@ -1,5 +1,6 @@
 'use server'
 
+import db from "./db";
 import { profileSchema } from "./schemas";
 
 export const createProfileAction = async (prevState: any, formData: FormData) => {
@@ -7,6 +8,13 @@ export const createProfileAction = async (prevState: any, formData: FormData) =>
         const rawData = Object.fromEntries(formData);
         console.log(rawData)
         const validatedFields = profileSchema.parse(rawData);
+
+        await db.testProfile.create({
+            data: {
+                name: validatedFields.firstName,
+            },
+        });
+
         return {
             message: 'Profile created',
         }
