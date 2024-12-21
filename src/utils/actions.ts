@@ -3,6 +3,7 @@
 import { clerkClient, currentUser } from "@clerk/nextjs/server";
 import db from "./db";
 import { profileSchema } from "./schemas";
+import { redirect } from "next/navigation";
 
 export const createProfileAction = async (prevState: any, formData: FormData) => {
     try {
@@ -24,13 +25,11 @@ export const createProfileAction = async (prevState: any, formData: FormData) =>
                 hasProfile: true,
             },
         });
-        return {
-            message: 'Profile created',
-        }
     } catch (error) {
         console.error(error);
         return {
             message: 'Validation error',
         }
     }
+    redirect('/profile');
 };  
