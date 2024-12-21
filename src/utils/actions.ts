@@ -1,20 +1,29 @@
 'use server'
 
+import { clerkClient, currentUser } from "@clerk/nextjs/server";
 import db from "./db";
 import { profileSchema } from "./schemas";
 
 export const createProfileAction = async (prevState: any, formData: FormData) => {
     try {
-        const rawData = Object.fromEntries(formData);
-        console.log(rawData)
-        const validatedFields = profileSchema.parse(rawData);
+        const user = await currentUser();
+        if (!user) throw new Error('Please login to create a profile');
 
-        await db.testProfile.create({
+        const rawData = Object.fromEntries(formData);
+        const validatedFields = profileSchema.parse(rawData);
+        await db.profile.create({
             data: {
-                name: validatedFields.firstName,
+                clerkId: user.id,
+                email: user.emailAddresses[0].emailAddress,
+                profileImage: user.imageUrl ?? '',
+                ...validatedFields,
+            }
+        })
+        await clerkClient.users.updateUserMetadata(user.id, {
+            privateMetadata: {
+                hasProfile: true,
             },
         });
-
         return {
             message: 'Profile created',
         }
