@@ -31,9 +31,8 @@ export const createProfileAction = async (prevState: any, formData: FormData) =>
             message: 'Validation error',
         }
     }
-    redirect('/profile');
+    redirect('/');
 };
-
 
 export const fetchProfileImage = async () => {
     const user = await currentUser();
