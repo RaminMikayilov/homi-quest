@@ -96,3 +96,9 @@ export const updateProfileAction = async (
         return renderError(error);
     }
 };
+
+export const updateProfileImageAction = async () => {
+    return {
+        message: 'Profile image updated successfully',
+    }
+}
