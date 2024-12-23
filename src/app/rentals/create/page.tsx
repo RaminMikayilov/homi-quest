@@ -1,8 +1,8 @@
 import { SubmitButton } from "@/components/custom/form/buttons/SubmitButton";
-import CategoriesInput from "@/components/custom/form/CategoriesInput";
+import CategoriesInput from "@/components/custom/form/inputs/CategoriesInput";
 import FormContainer from "@/components/custom/form/FormContainer";
-import FormInput from "@/components/custom/form/FormInput";
-import PriceInput from "@/components/custom/form/PriceInput";
+import FormInput from "@/components/custom/form/inputs/FormInput";
+import PriceInput from "@/components/custom/form/inputs/PriceInput";
 import { createPropertyAction } from "@/utils/actions";
 
 function CreateProperty() {

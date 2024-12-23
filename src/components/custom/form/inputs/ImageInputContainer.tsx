@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import FormContainer from "./FormContainer";
-import ImageInput from "./ImageInput";
 import { type actionFunction } from "@/utils/types";
 import { LuUser2 } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
-import { SubmitButton } from "./buttons/SubmitButton";
+import FormContainer from "../FormContainer";
+import ImageInput from "./ImageInput";
+import { SubmitButton } from "../buttons/SubmitButton";
 
 type ImageInputContainerProps = {
   image: string;
