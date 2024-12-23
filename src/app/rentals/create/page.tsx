@@ -1,6 +1,7 @@
 import { SubmitButton } from "@/components/custom/form/buttons/SubmitButton";
 import FormContainer from "@/components/custom/form/FormContainer";
 import FormInput from "@/components/custom/form/FormInput";
+import PriceInput from "@/components/custom/form/PriceInput";
 import { createPropertyAction } from "@/utils/actions";
 
 function CreateProperty() {
@@ -25,7 +26,7 @@ function CreateProperty() {
               label="Tagline (30 limit)"
               defaultValue="Dream Getaway Awaits You Here!"
             />
-            {/* price */}
+            <PriceInput />
             {/* categories */}
           </div>
           {/* text area / description */}
