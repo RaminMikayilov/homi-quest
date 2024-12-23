@@ -1,4 +1,5 @@
 import { SubmitButton } from "@/components/custom/form/buttons/SubmitButton";
+import CategoriesInput from "@/components/custom/form/CategoriesInput";
 import FormContainer from "@/components/custom/form/FormContainer";
 import FormInput from "@/components/custom/form/FormInput";
 import PriceInput from "@/components/custom/form/PriceInput";
@@ -27,7 +28,7 @@ function CreateProperty() {
               defaultValue="Dream Getaway Awaits You Here!"
             />
             <PriceInput />
-            {/* categories */}
+            <CategoriesInput />
           </div>
           {/* text area / description */}
           <SubmitButton text="create rental" className="mt-12" />
