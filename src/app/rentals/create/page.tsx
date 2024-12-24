@@ -7,6 +7,7 @@ import { createPropertyAction } from "@/utils/actions";
 import TextAreaInput from "@/components/custom/form/inputs/TextAreaInput";
 import CountriesInput from "@/components/custom/form/inputs/CountriesInput";
 import ImageInput from "@/components/custom/form/inputs/ImageInput";
+import CounterInput from "@/components/custom/form/inputs/CounterInput";
 
 function CreateProperty() {
   return (
@@ -40,6 +41,13 @@ function CreateProperty() {
             <CountriesInput />
             <ImageInput />
           </div>
+          <h3 className="text-lg mt-8 mb-4 font-medium">
+            Accommodation Details
+          </h3>
+          <CounterInput detail="guests" />
+          <CounterInput detail="bedrooms" />
+          <CounterInput detail="beds" />
+          <CounterInput detail="baths" />
           <SubmitButton text="create rental" className="mt-12" />
         </FormContainer>
       </div>
