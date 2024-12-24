@@ -5,6 +5,8 @@ import FormInput from "@/components/custom/form/inputs/FormInput";
 import PriceInput from "@/components/custom/form/inputs/PriceInput";
 import { createPropertyAction } from "@/utils/actions";
 import TextAreaInput from "@/components/custom/form/inputs/TextAreaInput";
+import CountriesInput from "@/components/custom/form/inputs/CountriesInput";
+import ImageInput from "@/components/custom/form/inputs/ImageInput";
 
 function CreateProperty() {
   return (
@@ -29,12 +31,15 @@ function CreateProperty() {
               defaultValue="Dream Getaway Awaits You Here!"
             />
             <PriceInput />
-            <CategoriesInput />
           </div>
           <TextAreaInput
             name="description"
             labelText="Description (10 - 1000 Words)"
           />
+          <div className="grid sm:grid-cols-2 gap-8 mt-4">
+            <CountriesInput />
+            <ImageInput />
+          </div>
           <SubmitButton text="create rental" className="mt-12" />
         </FormContainer>
       </div>
