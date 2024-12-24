@@ -4,7 +4,7 @@ import FormContainer from "@/components/custom/form/FormContainer";
 import FormInput from "@/components/custom/form/inputs/FormInput";
 import PriceInput from "@/components/custom/form/inputs/PriceInput";
 import { createPropertyAction } from "@/utils/actions";
-import TextAreaInput from "@/components/custom/form/inputs/TextareaInput";
+import TextAreaInput from "@/components/custom/form/inputs/TextAreaInput";
 
 function CreateProperty() {
   return (
