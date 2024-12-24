@@ -10,13 +10,13 @@ import ImageInput from "@/components/custom/form/inputs/ImageInput";
 import CounterInput from "@/components/custom/form/inputs/CounterInput";
 import AmenitiesInput from "@/components/custom/form/inputs/AmenitiesInput";
 
-function CreateProperty() {
+function CreatePropertyPage() {
   return (
     <section>
       <h1 className="text-2xl font-semibold mb-8 capitalize">
         create property
       </h1>
-      <div className="border p-8 rounded-md">
+      <div className="border p-8 rounded">
         <h3 className="text-lg mb-4 font-medium">General Info</h3>
         <FormContainer action={createPropertyAction}>
           <div className="grid md:grid-cols-2 gap-8 mb-4">
@@ -28,15 +28,16 @@ function CreateProperty() {
             />
             <FormInput
               name="tagline"
-              type="text "
+              type="text"
               label="Tagline (30 limit)"
-              defaultValue="Dream Getaway Awaits You Here!"
+              defaultValue="Dream Getaway Awaits You Here"
             />
             <PriceInput />
+            <CategoriesInput />
           </div>
           <TextAreaInput
             name="description"
-            labelText="Description (10 - 1000 Words)"
+            labelText="Description (10 - 1000 words)"
           />
           <div className="grid sm:grid-cols-2 gap-8 mt-4">
             <CountriesInput />
@@ -49,14 +50,13 @@ function CreateProperty() {
           <CounterInput detail="bedrooms" />
           <CounterInput detail="beds" />
           <CounterInput detail="baths" />
-
           <h3 className="text-lg mt-10 mb-6 font-medium">Amenities</h3>
           <AmenitiesInput />
-
           <SubmitButton text="create rental" className="mt-12" />
         </FormContainer>
       </div>
     </section>
   );
 }
-export default CreateProperty;
+
+export default CreatePropertyPage;
