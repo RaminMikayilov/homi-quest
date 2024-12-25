@@ -1,10 +1,18 @@
-import { Button } from "@/components/ui/button";
+import CategoriesList from "@/components/custom/home/CategoriesList";
 
-export default function HomePage() {
+export default function HomePage({
+  searchParams,
+}: {
+  searchParams: { category: string; search: string };
+}) {
+  console.log("HomePage", searchParams);
+
   return (
-    <>
-      <h1 className="text-3xl">HomePage</h1>
-      <Button>Test</Button>
-    </>
+    <section>
+      <CategoriesList
+        category={searchParams?.category}
+        search={searchParams?.search}
+      />
+    </section>
   );
 }
