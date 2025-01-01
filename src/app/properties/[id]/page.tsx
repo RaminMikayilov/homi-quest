@@ -1,5 +1,6 @@
 import FavoriteToggleButton from "@/components/custom/card/FavoriteToggleButton";
 import BreadCrumb from "@/components/custom/properties/BreadCrumb";
+import ImageContainer from "@/components/custom/properties/ImageContainer";
 import ShareButton from "@/components/custom/properties/ShareButton";
 import { fetchPropertyDetails } from "@/utils/actions";
 import { redirect } from "next/navigation";
@@ -18,6 +19,7 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
           <FavoriteToggleButton propertyId={property.id} />
         </div>
       </header>
+      <ImageContainer image={property.image} name={property.name} />
     </section>
   );
 }
