@@ -1,4 +1,5 @@
 import FavoriteToggleButton from "@/components/custom/card/FavoriteToggleButton";
+import PropertyRating from "@/components/custom/card/PropertyRating";
 import BreadCrumb from "@/components/custom/properties/BreadCrumb";
 import ImageContainer from "@/components/custom/properties/ImageContainer";
 import ShareButton from "@/components/custom/properties/ShareButton";
@@ -20,6 +21,17 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
         </div>
       </header>
       <ImageContainer image={property.image} name={property.name} />
+      <section className="lg:grid lg:grid-cols-12 gap-x-12 mt-12">
+        <div className="lg:col-span-8">
+          <div className="flex gap-x-4 items-center">
+            <h1 className="text-xl font-bold">{property.name}</h1>
+            <PropertyRating inPage propertyId={property.id} />
+          </div>
+        </div>
+        <div className="lg:col-span-4 flex flex-col items-center">
+          {/* calendar */}
+        </div>
+      </section>
     </section>
   );
 }
