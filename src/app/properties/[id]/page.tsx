@@ -5,6 +5,7 @@ import BookingCalendar from "@/components/custom/properties/Calendar";
 import ImageContainer from "@/components/custom/properties/ImageContainer";
 import PropertyDetails from "@/components/custom/properties/PropertyDetails";
 import ShareButton from "@/components/custom/properties/ShareButton";
+import UserInfo from "@/components/custom/properties/UserInfo";
 import { fetchPropertyDetails } from "@/utils/actions";
 import { redirect } from "next/navigation";
 
@@ -32,6 +33,10 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
             <PropertyRating inPage propertyId={property.id} />
           </div>
           <PropertyDetails details={details} />
+          <UserInfo
+            profileImage={property.profile.profileImage}
+            firstName={property.profile.firstName}
+          />
         </div>
         <div className="lg:col-span-4 flex flex-col items-center">
           <BookingCalendar />
