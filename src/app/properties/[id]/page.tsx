@@ -1,5 +1,6 @@
 import FavoriteToggleButton from "@/components/custom/card/FavoriteToggleButton";
 import PropertyRating from "@/components/custom/card/PropertyRating";
+import Amenities from "@/components/custom/properties/Amenities";
 import BreadCrumb from "@/components/custom/properties/BreadCrumb";
 import BookingCalendar from "@/components/custom/properties/Calendar";
 import Description from "@/components/custom/properties/Description";
@@ -39,6 +40,7 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
             firstName={property.profile.firstName}
           />
           <Description description={property.description} />
+          <Amenities amenities={property.amenities} />
         </div>
         <div className="lg:col-span-4 flex flex-col items-center">
           <BookingCalendar />
