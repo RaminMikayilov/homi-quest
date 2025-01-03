@@ -2,6 +2,7 @@ import FavoriteToggleButton from "@/components/custom/card/FavoriteToggleButton"
 import PropertyRating from "@/components/custom/card/PropertyRating";
 import BreadCrumb from "@/components/custom/properties/BreadCrumb";
 import BookingCalendar from "@/components/custom/properties/Calendar";
+import Description from "@/components/custom/properties/Description";
 import ImageContainer from "@/components/custom/properties/ImageContainer";
 import PropertyDetails from "@/components/custom/properties/PropertyDetails";
 import ShareButton from "@/components/custom/properties/ShareButton";
@@ -37,6 +38,7 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
             profileImage={property.profile.profileImage}
             firstName={property.profile.firstName}
           />
+          <Description description={property.description} />
         </div>
         <div className="lg:col-span-4 flex flex-col items-center">
           <BookingCalendar />
