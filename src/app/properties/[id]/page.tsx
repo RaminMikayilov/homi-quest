@@ -3,6 +3,7 @@ import PropertyRating from "@/components/custom/card/PropertyRating";
 import BreadCrumb from "@/components/custom/properties/BreadCrumb";
 import BookingCalendar from "@/components/custom/properties/Calendar";
 import ImageContainer from "@/components/custom/properties/ImageContainer";
+import PropertyDetails from "@/components/custom/properties/PropertyDetails";
 import ShareButton from "@/components/custom/properties/ShareButton";
 import { fetchPropertyDetails } from "@/utils/actions";
 import { redirect } from "next/navigation";
@@ -10,6 +11,8 @@ import { redirect } from "next/navigation";
 async function PropertyDetailsPage({ params }: { params: { id: string } }) {
   const property = await fetchPropertyDetails(params.id);
   if (!property) redirect("/");
+  const { baths, bedrooms, beds, guests } = property;
+  const details = { baths, bedrooms, beds, guests };
 
   return (
     <section>
@@ -28,6 +31,7 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
             <h1 className="text-xl font-bold">{property.name}</h1>
             <PropertyRating inPage propertyId={property.id} />
           </div>
+          <PropertyDetails details={details} />
         </div>
         <div className="lg:col-span-4 flex flex-col items-center">
           <BookingCalendar />
