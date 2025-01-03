@@ -8,6 +8,7 @@ import ImageContainer from "@/components/custom/properties/ImageContainer";
 import PropertyDetails from "@/components/custom/properties/PropertyDetails";
 import ShareButton from "@/components/custom/properties/ShareButton";
 import UserInfo from "@/components/custom/properties/UserInfo";
+import { Separator } from "@/components/ui/separator";
 import { fetchPropertyDetails } from "@/utils/actions";
 import { redirect } from "next/navigation";
 
@@ -39,6 +40,7 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
             profileImage={property.profile.profileImage}
             firstName={property.profile.firstName}
           />
+          <Separator className="mt-4" />
           <Description description={property.description} />
           <Amenities amenities={property.amenities} />
         </div>
