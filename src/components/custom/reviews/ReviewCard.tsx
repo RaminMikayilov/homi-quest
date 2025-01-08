@@ -18,13 +18,15 @@ function ReviewCard({ reviewInfo, children }: ReviewCardProps) {
     <Card className="relative">
       <CardHeader>
         <div className="flex items-center">
-          <Image
-            src={reviewInfo.image}
-            alt="profile"
-            width={48}
-            height={48}
-            className="rounded-full object-cover"
-          />
+          <div className="relative w-12 h-12">
+            <Image
+              src={reviewInfo.image}
+              alt="profile"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-full"
+            />
+          </div>
           <div className="ml-4">
             <h3 className="text-sm font-bold capitalize mb-1">
               {reviewInfo.name}
