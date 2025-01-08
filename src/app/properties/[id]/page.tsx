@@ -8,6 +8,7 @@ import ImageContainer from "@/components/custom/properties/ImageContainer";
 import PropertyDetails from "@/components/custom/properties/PropertyDetails";
 import ShareButton from "@/components/custom/properties/ShareButton";
 import UserInfo from "@/components/custom/properties/UserInfo";
+import SubmitReview from "@/components/custom/reviews/SubmitReview";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { fetchPropertyDetails } from "@/utils/actions";
@@ -58,6 +59,9 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
         <div className="lg:col-span-4 flex flex-col items-center">
           <BookingCalendar />
         </div>
+      </section>
+      <section>
+        <SubmitReview propertyId={property.id} />
       </section>
     </section>
   );
