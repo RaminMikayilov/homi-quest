@@ -8,6 +8,7 @@ import ImageContainer from "@/components/custom/properties/ImageContainer";
 import PropertyDetails from "@/components/custom/properties/PropertyDetails";
 import ShareButton from "@/components/custom/properties/ShareButton";
 import UserInfo from "@/components/custom/properties/UserInfo";
+import PropertyReviews from "@/components/custom/reviews/PropertyReviews";
 import SubmitReview from "@/components/custom/reviews/SubmitReview";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -62,6 +63,7 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
       </section>
       <section>
         <SubmitReview propertyId={property.id} />
+        <PropertyReviews propertyId={property.id} />
       </section>
     </section>
   );
