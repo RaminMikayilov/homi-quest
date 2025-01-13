@@ -12,7 +12,8 @@ import PropertyReviews from "@/components/custom/reviews/PropertyReviews";
 import SubmitReview from "@/components/custom/reviews/SubmitReview";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
-import { fetchPropertyDetails } from "@/utils/actions";
+import { fetchPropertyDetails, findExistingReview } from "@/utils/actions";
+import { auth } from "@clerk/nextjs/server";
 import dynamic from "next/dynamic";
 import { redirect } from "next/navigation";
 
@@ -29,6 +30,10 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
   if (!property) redirect("/");
   const { baths, bedrooms, beds, guests } = property;
   const details = { baths, bedrooms, beds, guests };
+  const { userId } = auth();
+  const isNotOwner = property.profile.clerkId !== userId;
+  const reviewDoesNotExist =
+    userId && isNotOwner && !(await findExistingReview(userId, property.id));
 
   return (
     <section>
@@ -62,7 +67,7 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
         </div>
       </section>
       <section>
-        <SubmitReview propertyId={property.id} />
+        {reviewDoesNotExist && <SubmitReview propertyId={property.id} />}
         <PropertyReviews propertyId={property.id} />
       </section>
     </section>
