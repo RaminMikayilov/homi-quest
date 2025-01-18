@@ -258,6 +258,12 @@ export const fetchPropertyDetails = (id: string) => {
         },
         include: {
             profile: true,
+            bookings: {
+                select: {
+                    checkIn: true,
+                    checkOut: true,
+                },
+            },
         },
     });
 };
@@ -377,4 +383,8 @@ export const findExistingReview = async (
             propertyId: propertyId,
         },
     });
+};
+
+export const createBookingAction = async () => {
+    return { message: 'create booking' };
 };

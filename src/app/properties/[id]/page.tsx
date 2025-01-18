@@ -2,7 +2,7 @@ import FavoriteToggleButton from "@/components/custom/card/FavoriteToggleButton"
 import PropertyRating from "@/components/custom/card/PropertyRating";
 import Amenities from "@/components/custom/properties/Amenities";
 import BreadCrumb from "@/components/custom/properties/BreadCrumb";
-import BookingCalendar from "@/components/custom/properties/Calendar";
+import BookingCalendar from "@/components/custom/booking/BookingCalendar";
 import Description from "@/components/custom/properties/Description";
 import ImageContainer from "@/components/custom/properties/ImageContainer";
 import PropertyDetails from "@/components/custom/properties/PropertyDetails";
@@ -22,6 +22,14 @@ const DynamicMap = dynamic(
   {
     ssr: false,
     loading: () => <Skeleton className="h-[400px] w-full" />,
+  }
+);
+
+const DynamicBookingWrapper = dynamic(
+  () => import("@/components/custom/booking/BookingWrapper"),
+  {
+    ssr: false,
+    loading: () => <Skeleton className="h-[200px] w-full" />,
   }
 );
 
@@ -63,7 +71,11 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
           <DynamicMap countryCode={property.country} />
         </div>
         <div className="lg:col-span-4 flex flex-col items-center">
-          <BookingCalendar />
+          <DynamicBookingWrapper
+            propertyId={property.id}
+            price={property.price}
+            bookings={property.bookings}
+          />
         </div>
       </section>
       <section>
