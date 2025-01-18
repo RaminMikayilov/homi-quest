@@ -20,14 +20,14 @@ function ConfirmBooking() {
       </SignInButton>
     );
 
-  //   const createBooking = createBookingAction.bind(null, {
-  //     propertyId,
-  //     checkIn,
-  //     checkOut,
-  //   });
+  const createBooking = createBookingAction.bind(null, {
+    propertyId,
+    checkIn,
+    checkOut,
+  });
   return (
     <section>
-      <FormContainer action={createBookingAction}>
+      <FormContainer action={createBooking}>
         <SubmitButton text="Reserve" className="w-full" />
       </FormContainer>
     </section>
