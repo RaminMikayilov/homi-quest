@@ -13,8 +13,12 @@ import {
 
 function BookingCalendar() {
   const currentDate = new Date();
-
   const [range, setRange] = useState<DateRange | undefined>(defaultSelected);
+  const bookings = usePropertyStore((state) => state.bookings);
+  const blockedPeriods = generateBlockedPeriods({
+    bookings,
+    today: currentDate,
+  });
 
   useEffect(() => {
     usePropertyStore.setState({ range });
@@ -26,6 +30,7 @@ function BookingCalendar() {
       defaultMonth={currentDate}
       selected={range}
       onSelect={setRange}
+      disabled={blockedPeriods}
       className="mb-4"
     />
   );
