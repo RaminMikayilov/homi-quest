@@ -10,6 +10,7 @@ import {
   defaultSelected,
   generateBlockedPeriods,
 } from "@/utils/calendar";
+import { useToast } from "@/hooks/use-toast";
 
 function BookingCalendar() {
   const currentDate = new Date();
@@ -19,8 +20,21 @@ function BookingCalendar() {
     bookings,
     today: currentDate,
   });
+  const { toast } = useToast();
+  const unavailableDates = generateDisabledDates(blockedPeriods);
 
   useEffect(() => {
+    const selectedRange = generateDateRange(range);
+    selectedRange.some((date) => {
+      if (unavailableDates[date]) {
+        setRange(defaultSelected);
+        toast({
+          description: "Some dates are booked. Please select again.",
+        });
+        return true;
+      }
+      return false;
+    });
     usePropertyStore.setState({ range });
   }, [range]);
 
