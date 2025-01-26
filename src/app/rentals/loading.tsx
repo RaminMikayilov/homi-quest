@@ -1,14 +1,7 @@
-import { Skeleton } from "@/components/ui/skeleton";
+import LoadingTable from "@/components/custom/booking/LoadingTable";
 
-function Loading({ rows }: { rows?: number }) {
-  const tableRows = Array.from({ length: rows || 5 }, (_, i) => {
-    return (
-      <div className="mb-4" key={i}>
-        <Skeleton className="w-full h-8 rounded" />
-      </div>
-    );
-  });
-  return <>{tableRows}</>;
+function Loading() {
+  return <LoadingTable />;
 }
 
 export default Loading;
