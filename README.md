@@ -1,8 +1,8 @@
-# Homi Quest
+# 🏡 Homi Quest
 
 Homi Quest is a platform inspired by Airbnb, designed to help users find, book, and manage rentals. It provides a seamless experience for both renters and property owners, offering features like property listings, bookings, reviews, and more.
 
-## Features
+## ✨ Features
 
 - **Home Page**: Discover and explore available rentals.
 - **Favorites**: Save your favorite rentals for easy access.
@@ -14,7 +14,7 @@ Homi Quest is a platform inspired by Airbnb, designed to help users find, book, 
 - **Admin**: Access admin-specific features and controls.
 - **Profile**: Manage your personal profile and settings.
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - **Frontend**:
 
@@ -44,7 +44,7 @@ Homi Quest is a platform inspired by Airbnb, designed to help users find, book, 
   - [React Share](https://github.com/nygardk/react-share) (v5.1.2) for social sharing
   - [World Countries](https://github.com/mledoze/countries) (v5.0.0) for country data
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -84,14 +84,14 @@ Homi Quest is a platform inspired by Airbnb, designed to help users find, book, 
 6. **Open your browser**:
    Visit `http://localhost:3000` to view the application.
 
-## Available Scripts
+## 📜 Available Scripts
 
 - **`npm run dev`**: Starts the development server.
 - **`npm run build`**: Generates the Prisma client and builds the application for production.
 - **`npm run start`**: Starts the production server.
 - **`npm run lint`**: Runs ESLint to check for code issues.
 
-## Routes
+## 🌍 Routes
 
 The application includes the following routes:
 
@@ -105,7 +105,7 @@ The application includes the following routes:
 - **Admin**: `/admin`
 - **Profile**: `/profile`
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -115,10 +115,10 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/YourFeatureName`).
 5. Open a pull request.
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+## 🙌 Acknowledgments
 
 - Inspired by Airbnb.
