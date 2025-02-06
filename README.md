@@ -91,20 +91,6 @@ Homi Quest is a platform inspired by Airbnb, designed to help users find, book, 
 - **`npm run start`**: Starts the production server.
 - **`npm run lint`**: Runs ESLint to check for code issues.
 
-## 🌍 Routes
-
-The application includes the following routes:
-
-- **Home**: `/`
-- **Favorites**: `/favorites`
-- **Bookings**: `/bookings`
-- **Reviews**: `/reviews`
-- **Reservations**: `/reservations`
-- **Create Rental**: `/rentals/create`
-- **My Rentals**: `/rentals`
-- **Admin**: `/admin`
-- **Profile**: `/profile`
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
